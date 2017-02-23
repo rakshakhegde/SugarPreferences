@@ -8,7 +8,7 @@
 
 		<variable
 			name="progress"
-			type="io.github.rakshakhegde.observpref.ObservableIntPref"/>
+			type="io.github.rakshakhegde.observpref.ObsrvIntPref"/>
 	</data>
 
 	<android.support.constraint.ConstraintLayout

@@ -9,7 +9,7 @@ import android.preference.PreferenceManager
  * Created by rakshakhegde on 23/02/17.
  */
 
-class ObservableIntPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Int = 0) :
+class ObsrvIntPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Int = 0) :
 		ObservableInt(default) {
 
 	private val appCtx = ctx.applicationContext

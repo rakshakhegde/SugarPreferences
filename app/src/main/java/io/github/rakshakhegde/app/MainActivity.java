@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import io.github.rakshakhegde.app.databinding.ActivityMainBinding;
-import io.github.rakshakhegde.observpref.ObservableIntPref;
+import io.github.rakshakhegde.observpref.ObsrvIntPref;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		final ObservableIntPref progress = new ObservableIntPref(
+		final ObsrvIntPref progress = new ObsrvIntPref(
 				getBaseContext(),
 				MODEL_KEY,
 				60
