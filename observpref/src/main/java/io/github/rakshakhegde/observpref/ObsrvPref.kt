@@ -8,7 +8,7 @@ import android.preference.PreferenceManager
 /**
  * Created by rakshakhegde on 23/02/17.
  */
-abstract class ObservablePref<T>(ctx: Context, key: String) : ObservableField<T>() {
+abstract class ObsrvPref<T>(ctx: Context, key: String) : ObservableField<T>() {
 
 	private val appCtx = ctx.applicationContext
 	protected val defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(appCtx)

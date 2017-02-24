@@ -9,7 +9,7 @@ import android.preference.PreferenceManager
  * Created by rakshakhegde on 23/02/17.
  */
 
-class ObservableFloatPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Float = 0F) :
+class ObsrvFloatPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Float = 0F) :
 		ObservableFloat(default) {
 
 	private val appCtx = ctx.applicationContext

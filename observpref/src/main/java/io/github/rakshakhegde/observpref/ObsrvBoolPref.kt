@@ -8,7 +8,7 @@ import android.preference.PreferenceManager
 /**
  * Created by rakshakhegde on 23/02/17.
  */
-class ObservableBoolPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Boolean = false) :
+class ObsrvBoolPref @JvmOverloads constructor(ctx: Context, val key: String, val default: Boolean = false) :
 		ObservableBoolean(default) {
 
 	private val appCtx = ctx.applicationContext
