@@ -27,4 +27,3 @@
 
 # KOTLIN
 -dontwarn kotlin.**
--dontwarn org.jetbrains.anko.internals.AnkoInternals
