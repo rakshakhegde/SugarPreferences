@@ -35,7 +35,6 @@ dependencies {
 	})
 	testCompile 'junit:junit:4.12'
 	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-	annotationProcessor "com.android.databinding:compiler:2.3.0"
 }
 repositories {
 	mavenCentral()
