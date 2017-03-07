@@ -1,6 +1,7 @@
-package io.github.rakshakhegde.observpref
+package io.github.rakshakhegde.obsrvpref.obsrv
 
 import android.content.Context
+import io.github.rakshakhegde.obsrvpref.set
 
 /**
  * Created by rakshakhegde on 23/02/17.
@@ -8,9 +9,9 @@ import android.content.Context
 class ObsrvStringPref(ctx: Context, val key: String, val default: String = "") :
 		ObsrvPref<String>(ctx, key) {
 
-	override fun get(): String = defaultSharedPreferences.getString(key, default)
+	override fun get(): String = preferences.getString(key, default)
 
 	override fun set(value: String) {
-		defaultSharedPreferences.edit().putString(key, value).apply()
+		preferences[key] = value
 	}
 }

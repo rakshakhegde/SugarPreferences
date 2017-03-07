@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import io.github.rakshakhegde.app.databinding.ActivityMainBinding;
-import io.github.rakshakhegde.observpref.ObsrvIntPref;
+import io.github.rakshakhegde.obsrvpref.obsrv.ObsrvIntPref;
 
 public class MainActivity extends AppCompatActivity {
 

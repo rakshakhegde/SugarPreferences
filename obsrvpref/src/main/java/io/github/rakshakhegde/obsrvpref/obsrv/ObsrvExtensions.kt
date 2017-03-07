@@ -1,4 +1,4 @@
-package io.github.rakshakhegde.observpref
+package io.github.rakshakhegde.obsrvpref.obsrv
 
 import android.content.Context
 

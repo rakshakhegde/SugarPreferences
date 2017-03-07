@@ -1,4 +1,4 @@
-package io.github.rakshakhegde.observpref
+package io.github.rakshakhegde.obsrvpref.obsrv
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -10,17 +10,16 @@ import android.preference.PreferenceManager
  */
 abstract class ObsrvPref<T>(ctx: Context, key: String) : ObservableField<T>() {
 
-	private val appCtx = ctx.applicationContext
-	protected val defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(appCtx)
+	protected val preferences: SharedPreferences by lazy {
+		val pref = PreferenceManager.getDefaultSharedPreferences(ctx.applicationContext)
+		pref.registerOnSharedPreferenceChangeListener(prefListener)
+		pref
+	}
 
-	private val prefListener = SharedPreferences.OnSharedPreferenceChangeListener { sharedPreferences, _key ->
+	private val prefListener = SharedPreferences.OnSharedPreferenceChangeListener { _, _key ->
 		if (_key == key) {
 			notifyChange()
 		}
-	}
-
-	init {
-		defaultSharedPreferences.registerOnSharedPreferenceChangeListener(prefListener)
 	}
 
 	abstract override fun get(): T

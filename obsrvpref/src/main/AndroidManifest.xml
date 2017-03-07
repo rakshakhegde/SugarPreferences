@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="io.github.rakshakhegde.observpref">
+          package="io.github.rakshakhegde.obsrvpref">
 
 	<application
 		android:allowBackup="true"

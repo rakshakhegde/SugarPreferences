@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ObsrvPref.iml" filepath="$PROJECT_DIR$/ObsrvPref.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/observpref/observpref.iml" filepath="$PROJECT_DIR$/observpref/observpref.iml" />
+      <module fileurl="file://$PROJECT_DIR$/obsrvpref/obsrvpref.iml" filepath="$PROJECT_DIR$/obsrvpref/obsrvpref.iml" />
     </modules>
   </component>
 </project>

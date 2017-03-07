@@ -1,1 +1,1 @@
-include ':app', ':observpref'
+include ':app', ':obsrvpref'
