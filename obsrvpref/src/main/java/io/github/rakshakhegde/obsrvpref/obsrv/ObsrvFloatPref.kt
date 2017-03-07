@@ -36,4 +36,3 @@ class ObsrvFloatPref @JvmOverloads constructor(
 		preferences[key] = value
 	}
 }
-}
