@@ -11,15 +11,15 @@ public class MainActivity extends AppCompatActivity {
 
 	public static final String MODEL_KEY = "MODEL_KEY";
 
+	final ObsrvIntPref progress = new ObsrvIntPref(
+			this,
+			MODEL_KEY,
+			60
+	);
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		final ObsrvIntPref progress = new ObsrvIntPref(
-				getBaseContext(),
-				MODEL_KEY,
-				60
-		);
 
 		final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 		binding.setProgress(progress);
