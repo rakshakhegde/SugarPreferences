@@ -5,11 +5,6 @@
 		android:allowBackup="true"
 		android:label="@string/app_name"
 		android:supportsRtl="true">
-		<provider
-			android:name="io.github.rakshakhegde.sugarprefs.SugarPreferencesInitProvider"
-			android:authorities="${applicationId}.sugarprefsinitprovider"
-			android:enabled="true"
-			android:exported="true"/>
 	</application>
 
 </manifest>
