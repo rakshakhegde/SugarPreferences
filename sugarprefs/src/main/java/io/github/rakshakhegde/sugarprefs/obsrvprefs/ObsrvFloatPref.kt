@@ -1,9 +1,9 @@
 package io.github.rakshakhegde.sugarprefs.obsrvprefs
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.databinding.ObservableFloat
-import android.preference.PreferenceManager
+import io.github.rakshakhegde.sugarprefs.PreferenceHelper
+import io.github.rakshakhegde.sugarprefs.SugarPrefImpl
 import io.github.rakshakhegde.sugarprefs.prefextensions.set
 
 /**
@@ -11,24 +11,12 @@ import io.github.rakshakhegde.sugarprefs.prefextensions.set
  */
 
 class ObsrvFloatPref @JvmOverloads constructor(
-
-		ctx: Context,
 		val key: String,
-		val defaultVal: Float = 0F
-
+		val defaultVal: Float = 0F,
+		val preferences: SharedPreferences = PreferenceHelper.defaultPrefs
 ) : ObservableFloat(defaultVal) {
 
-	protected val preferences: SharedPreferences by lazy {
-		val pref = PreferenceManager.getDefaultSharedPreferences(ctx.applicationContext)
-		pref.registerOnSharedPreferenceChangeListener(prefListener)
-		pref
-	}
-
-	private val prefListener = SharedPreferences.OnSharedPreferenceChangeListener { _, _key ->
-		if (_key == key) {
-			notifyChange()
-		}
-	}
+	private val sugarPref = SugarPrefImpl(this, key, preferences)
 
 	override fun get(): Float = preferences.getFloat(key, defaultVal)
 
