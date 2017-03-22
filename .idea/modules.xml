@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ObsrvPref.iml" filepath="$PROJECT_DIR$/ObsrvPref.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SugarPreferences.iml" filepath="$PROJECT_DIR$/SugarPreferences.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/obsrvpref/obsrvpref.iml" filepath="$PROJECT_DIR$/obsrvpref/obsrvpref.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sugarprefs/sugarprefs.iml" filepath="$PROJECT_DIR$/sugarprefs/sugarprefs.iml" />
     </modules>
   </component>
 </project>

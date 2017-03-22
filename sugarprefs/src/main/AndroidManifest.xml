@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="io.github.rakshakhegde.sugarprefs">
+
+	<application
+		android:allowBackup="true"
+		android:label="@string/app_name"
+		android:supportsRtl="true">
+		<provider
+			android:name="io.github.rakshakhegde.sugarprefs.SugarPreferencesInitProvider"
+			android:authorities="${applicationId}.sugarprefsinitprovider"
+			android:enabled="true"
+			android:exported="false"/>
+	</application>
+
+</manifest>

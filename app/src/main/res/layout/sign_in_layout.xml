@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+	<data>
+
+		<variable
+			name="model"
+			type="io.github.rakshakhegde.app.EmailPasswordModel"/>
+	</data>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<android.support.design.widget.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/editText"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:hint="Email"
+				android:inputType="textPersonName"
+				android:text="@={model.email}"/>
+		</android.support.design.widget.TextInputLayout>
+
+		<android.support.design.widget.TextInputLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/editText2"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:ems="10"
+				android:hint="Password"
+				android:inputType="textPersonName"
+				android:text="@={model.password}"/>
+		</android.support.design.widget.TextInputLayout>
+
+		<Button
+			android:id="@+id/button"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:onClick="@{() -> model.signInBtnClicked()}"
+			android:text="Sign In"/>
+	</LinearLayout>
+</layout>

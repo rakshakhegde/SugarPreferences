@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
 
 android {
 	compileSdkVersion 25
@@ -13,6 +12,9 @@ android {
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 	}
 	buildTypes {
+		debug {
+			minifyEnabled true
+		}
 		release {
 			minifyEnabled false
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -25,18 +27,24 @@ android {
 	dataBinding.enabled = true
 }
 
+ext {
+	supportLibVersion = "25.3.0"
+}
+
 dependencies {
 	compile fileTree(include: ['*.jar'], dir: 'libs')
 	androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
 		exclude group: 'com.android.support', module: 'support-annotations'
 	})
-	compile 'com.android.support:appcompat-v7:25.2.0'
-	compile 'com.android.support.constraint:constraint-layout:1.0.1'
 	testCompile 'junit:junit:4.12'
 
-	compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+	compile "com.android.support:appcompat-v7:$supportLibVersion"
+	compile "com.android.support:design:$supportLibVersion"
+	compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-	compile project(':obsrvpref')
+	compile 'com.github.rakshakhegde:LastPagerAdapter:1.1.0'
+
+	compile project(':sugarprefs')
 }
 repositories {
 	mavenCentral()
