@@ -8,8 +8,7 @@
 		<provider
 			android:name="io.github.rakshakhegde.sugarprefs.SugarPreferencesInitProvider"
 			android:authorities="${applicationId}.sugarprefsinitprovider"
-			android:enabled="true"
-			android:exported="false"/>
+			android:enabled="true"/>
 	</application>
 
 </manifest>

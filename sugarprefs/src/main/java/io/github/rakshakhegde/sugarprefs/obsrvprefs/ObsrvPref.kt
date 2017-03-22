@@ -8,7 +8,7 @@ import io.github.rakshakhegde.sugarprefs.SugarPrefImpl
 /**
  * Created by rakshakhegde on 23/02/17.
  */
-abstract class ObsrvPref<T>(
+abstract class ObsrvPref<T> @JvmOverloads constructor(
 		key: String,
 		preferences: SharedPreferences = PreferenceHelper.defaultPrefs
 ) : ObservableField<T>() {
