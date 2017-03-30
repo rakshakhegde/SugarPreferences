@@ -11,11 +11,11 @@ class ObsrvStringPref @JvmOverloads constructor(
 		val key: String,
 		val defaultVal: String? = null,
 		val preferences: SharedPreferences = PreferenceHelper.defaultPrefs
-) : ObsrvPref<String>(key, preferences) {
+) : ObsrvPref<String?>(key, preferences) {
 
-	override fun get(): String = preferences.getString(key, defaultVal)
+	override fun get(): String? = preferences.getString(key, defaultVal)
 
-	override fun set(value: String) {
+	override fun set(value: String?) {
 		preferences[key] = value
 	}
 }
