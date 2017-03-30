@@ -9,7 +9,7 @@ import io.github.rakshakhegde.sugarprefs.prefextensions.set
  */
 class ObsrvStringPref @JvmOverloads constructor(
 		val key: String,
-		val defaultVal: String = "",
+		val defaultVal: String? = null,
 		val preferences: SharedPreferences = PreferenceHelper.defaultPrefs
 ) : ObsrvPref<String>(key, preferences) {
 
