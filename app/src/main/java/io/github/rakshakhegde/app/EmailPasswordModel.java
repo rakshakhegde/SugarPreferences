@@ -3,7 +3,7 @@ package io.github.rakshakhegde.app;
 import android.app.Activity;
 import android.widget.Toast;
 
-import io.github.rakshakhegde.sugarprefs.obsrvprefs.ObsrvStringPref;
+import io.github.rakshakhegde.sugarprefs.obsrvprefs.ObsrvStringNullablePref;
 
 /**
  * Created by rakshakhegde on 11/03/17.
@@ -12,8 +12,8 @@ import io.github.rakshakhegde.sugarprefs.obsrvprefs.ObsrvStringPref;
 public class EmailPasswordModel {
 
 	private final Activity act;
-	public ObsrvStringPref email = new ObsrvStringPref("EMAIL");
-	public ObsrvStringPref password = new ObsrvStringPref("PASSWORD");
+	public ObsrvStringNullablePref email = new ObsrvStringNullablePref("EMAIL");
+	public ObsrvStringNullablePref password = new ObsrvStringNullablePref("PASSWORD");
 
 	EmailPasswordModel(Activity _act) {
 		act = _act;
