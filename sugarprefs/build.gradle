@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-	compileSdkVersion 25
-	buildToolsVersion "25.0.2"
+	compileSdkVersion 26
+	buildToolsVersion "26.0.1"
 
 	defaultConfig {
 		minSdkVersion 9
-		targetSdkVersion 25
+		targetSdkVersion 26
 		versionCode 1
-		versionName "1.0"
+		versionName "0.1-alpha"
 		consumerProguardFiles 'proguard-rules.pro'
 
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

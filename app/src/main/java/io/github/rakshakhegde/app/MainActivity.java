@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 		ActivityMainBinding activityMainBinding = DataBindingUtil
 				.setContentView(this, R.layout.activity_main);
 
+		// LastPagerAdapter is another helper library I've written for simplifying ViewPager creation
+		// https://github.com/rakshakhegde/LastPagerAdapter
 		new LastPagerAdapter(BR.model)
 				.add(R.layout.progress_layout, "Progress", new ObsrvIntPref("PROGRESS"))
 				.add(R.layout.sign_in_layout, "Sign In", new EmailPasswordModel(this))

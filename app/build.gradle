@@ -1,22 +1,23 @@
 apply plugin: 'com.android.application'
 
 android {
-	compileSdkVersion 25
-	buildToolsVersion "25.0.2"
+	compileSdkVersion 26
+	buildToolsVersion "26.0.1"
+
 	defaultConfig {
 		applicationId "io.github.rakshakhegde.obsrvpref"
-		minSdkVersion 9
-		targetSdkVersion 25
+		minSdkVersion 14
+		targetSdkVersion 26
 		versionCode 1
 		versionName "1.0"
 		testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 	}
 	buildTypes {
 		debug {
-			minifyEnabled true
+			minifyEnabled false
 		}
 		release {
-			minifyEnabled false
+			minifyEnabled true
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
@@ -28,7 +29,7 @@ android {
 }
 
 ext {
-	supportLibVersion = "25.3.0"
+	supportLibVersion = "26.0.1"
 }
 
 dependencies {
@@ -42,6 +43,8 @@ dependencies {
 	compile "com.android.support:design:$supportLibVersion"
 	compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
+	// LastPagerAdapter is another helper library I've written for simplifying ViewPager creation
+	// https://github.com/rakshakhegde/LastPagerAdapter
 	compile 'com.github.rakshakhegde:LastPagerAdapter:1.1.0'
 
 	compile project(':sugarprefs')

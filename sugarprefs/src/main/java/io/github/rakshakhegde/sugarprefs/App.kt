@@ -7,5 +7,5 @@ import android.content.Context
  */
 
 object App {
-	lateinit var ctx: Context
+	internal lateinit var ctx: Context
 }
