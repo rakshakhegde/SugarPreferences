@@ -4,37 +4,64 @@
 
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
 
-Interacting with SharedPreferences made simple.
+Interacting with SharedPreferences made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
 
-## Installation
+## Setup
+
+Add this in your root `build.gradle` at the end of repositories:
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Step 2. Add the dependency in your `app` module's `build.gradle` file
+```gradle
+apply plugin: 'kotlin-kapt'  // this line only for Kotlin projects
+
+android {
+    ...
+    dataBinding.enabled true
+}
+
+dependencies {
+    compile 'com.github.rakshakhegde:SugarPreferences:0.1-alpha'
+    kapt 'com.android.databinding:compiler:GRADLE_PLUGIN_VERSION' // this line only for Kotlin projects
+}
+```
 
 ## Usage
+
+```java
+ObservableInt progressPref;
+// "PROGRESS" is key name with Int value type
+progressPref = new ObsrvIntPref("PROGRESS"); // uses default SharedPrefs with defaultVal 0 or,
+progressPref = new ObsrvIntPref("PROGRESS", 56); //uses default SharedPrefs with defaultVal 56, or,
+progressPref = new ObsrvIntPref("PROGRESS", 56, yourPreferences);
+
+progressPref.get(); // Gets directly from Default SharedPreferences
+progressPref.set(42); // Saves to Default SharedPreferences
+```
 
 `MainActivity.java` - inside onCreate()
 ```java
 ActivityMainBinding binding = DataBindingUtil
         .setContentView(this, R.layout.activity_main);
-
-// PROGRESS is Preferences key name with Int value type
-binding.setModel(new ObsrvIntPref("PROGRESS"));
+binding.setModel(progressPref);
 ```
 `activity_main.xml`
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools">
-
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 	<data>
-
 		<variable
 			name="model"
-			type="io.github.rakshakhegde.sugarprefs.obsrvprefs.ObsrvIntPref"/>
+			type="io.github.rakshakhegde.sugarprefs.obsrvprefs.ObsrvIntPref" />
 	</data>
 	
     <SeekBar
-		android:id="@+id/seekBar"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:progress="@={model, default=60}" />
@@ -42,12 +69,46 @@ binding.setModel(new ObsrvIntPref("PROGRESS"));
 </layout>
 ```
 
-**Explanation**: Ok, WTF just happened there...
+**Explanation**: Ok, WTF just happened there?!? `ObsrvIntPref` extends `ObservableInt` which directly reads and saves to default SharedPreferences every time it's value changes. And it is bound to seekbar using Two-way databinding. So whenever seekbar value changes, it is immediately saved to SharedPreferences with `"PROGRESS"` as the key.
 
-So just that's it. No need to pass `Context`, `apply()`, and what not ceremony...
+So that's just it. No need to pass `Context`, `apply()`, and what not ceremony...
+
+### Just like `ObsrvIntPref`, there are others...
+
+    Data Type |    Default Value 
+----------------|------------------
+`ObsrvBoolPref` | `false`
+`ObsrvFloatPref` | `0F`
+`ObsrvStringPref` | `""` empty string
+`ObsrvStringNullablePref` | `null`
+`ObsrvLongPref` | `0L`
+`ObsrvPref` Generic implementation that you can extend to handle any data type | Abstract class
+
+## Kotlin Sugar
+
+### set()
+
+```kotlin
+defaultSharedPreferences["key1"] = 3 // sets the value
+defaultSharedPreferences["key2"] = "myString" // or boolean, float, long
+```
+
+### get()
+
+```kotlin
+defaultSharedPreferences["key1", 13]
+```
+
+**First** param is key and **second** param is the default value. So the above code gets the value for `key1` if present, or default value **13**. Based on the second param, the returned data type is decided. Here an `Int` is returned. If `null` is passed as default value, returned data type is assumed to be `String?` (nullable).
 
 ## FAQ
 
 **Q: I never gave you `Context`, how TF did you just access my SharedPrefs? 0_o**
 
-A: To make your, developer, life simpler, a `ContentProvider` is built into this library that will automatically get the context.
+A: To make your developer life simpler, a `ContentProvider` is built into this library that will automatically get the context so you don't have to deal with it. Cool right? Star this project for that :D
+
+**Q: I noticed library is written in Kotlin. Why did you do that? That just adds unnecessary dependency to my Java-only project.**
+
+A: Cuz Kotlin is hip and cool bro... Haha, in all seriousness though, it was much simpler to write in Kotlin and avoid explicitly writing overloaded functions. And the added advantage of nullability checks was a plus for me. Which is why I just went ahead with Kotlin. Extension helper functions are nice too :)
+
+I'm not biased here but you can indeed use this library in a Java-only project and not have much memory or performance impact after Proguard-ing your app.
