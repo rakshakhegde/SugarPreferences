@@ -19,6 +19,10 @@ operator fun SharedPreferences.set(key: String, intVal: Int) {
 	edit().putInt(key, intVal).apply()
 }
 
+operator fun SharedPreferences.set(key: String, longVal: Long) {
+	edit().putLong(key, longVal).apply()
+}
+
 operator fun SharedPreferences.set(key: String, stringVal: String?) {
 	edit().putString(key, stringVal).apply()
 }

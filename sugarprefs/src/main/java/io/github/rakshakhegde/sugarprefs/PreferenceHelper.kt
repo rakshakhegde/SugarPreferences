@@ -8,5 +8,5 @@ import android.preference.PreferenceManager
  */
 
 object PreferenceHelper {
-	internal val defaultPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(App.ctx)
+	val defaultPrefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(SugarPreferencesApp.ctx)
 }

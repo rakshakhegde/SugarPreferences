@@ -14,7 +14,7 @@ public final class SugarPreferencesInitProvider extends ContentProvider {
 	@Override
 	public boolean onCreate() {
 		// Get the Application Context
-		App.ctx = getContext();
+		SugarPreferencesApp.ctx = getContext();
 		return true;
 	}
 
