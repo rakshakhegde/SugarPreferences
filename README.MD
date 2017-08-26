@@ -4,7 +4,7 @@
 
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
 
-Interacting with SharedPreferences made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
+Interacting with `SharedPreferences` made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
 
 ## Setup
 
