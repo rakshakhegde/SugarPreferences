@@ -1,3 +1,5 @@
 <resources>
 	<string name="app_name">Sugar Preferences</string>
+	<string name="page_1_help_text">Any change you make is instantly saved.\nExit and re-enter app to confirm.\nClick on Sign In (top-right).</string>
+	<string name="page_2_help_text">Sign-in is just a demo. Any change you make here is instantly saved too.\n\nPlease follow me at\ngithub.com/rakshakhegde\n\ntwitter.com/rakshakhegde\n\nCheers :)</string>
 </resources>

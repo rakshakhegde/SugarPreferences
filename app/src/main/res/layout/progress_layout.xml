@@ -59,5 +59,20 @@
 			app:layout_constraintLeft_toLeftOf="parent"
 			app:layout_constraintRight_toRightOf="parent"/>
 
+		<TextView
+			android:id="@+id/textView2"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="32dp"
+			android:layout_marginLeft="16dp"
+			android:layout_marginRight="16dp"
+			android:gravity="center"
+			android:text="@string/page_1_help_text"
+			android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+			android:textStyle="italic"
+			app:layout_constraintBottom_toTopOf="@+id/seekBar"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"/>
+
 	</android.support.constraint.ConstraintLayout>
 </layout>
