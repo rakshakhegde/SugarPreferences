@@ -6,6 +6,8 @@
 
 Interacting with SharedPreferences made simple.
 
+## Installation
+
 ## Usage
 
 `MainActivity.java` - inside onCreate()
@@ -45,5 +47,7 @@ binding.setModel(new ObsrvIntPref("PROGRESS"));
 So just that's it. No need to pass `Context`, `apply()`, and what not ceremony...
 
 ## FAQ
+
 **Q: I never gave you `Context`, how TF did you just access my SharedPrefs? 0_o**
+
 A: To make your, developer, life simpler, a `ContentProvider` is built into this library that will automatically get the context.
