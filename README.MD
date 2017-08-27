@@ -3,8 +3,11 @@
 # SugarPreferences
 
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
+[![Release](https://jitpack.io/v/rakshakhegde/SugarPreferences.svg)](https://jitpack.io/#rakshakhegde/SugarPreferences)
 
-Interacting with `SharedPreferences` made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
+Interacting with `SharedPreferences` made simple. Check out the [sample app code](app/src/main).
+
+### Please sign up for my newsletter **[rakshakhegde](https://upscri.be/b00b87/)** 📧
 
 ## Setup
 
@@ -77,7 +80,7 @@ binding.setModel(progressPref);
 </layout>
 ```
 
-**Explanation**: Ok, WTF just happened there?!? `ObsrvIntPref` extends `ObservableInt` which directly reads and saves to default SharedPreferences every time it's value changes. And it is bound to seekbar using Two-way databinding. So whenever seekbar value changes, it is immediately saved to SharedPreferences with `"PROGRESS"` as the key.
+**Explanation**: Ok, WTF just happened there?!? `ObsrvIntPref` extends `ObservableInt` which directly reads and saves to default SharedPreferences every time it's value changes. And it is bound to seekbar using Two-way databinding. So whenever seekbar value changes, it is immediately saved to SharedPreferences with `"PROGRESS"` as the key. And even when you change the value of `"PROGRESS"` from anywhere else in your app, it will be automatically reflected in your variable `progressPref`.
 
 So that's just it. No need to pass `Context`, `apply()`, and what not ceremony...
 
@@ -129,4 +132,33 @@ A: There's an overloaded version for every `Obsrv*Pref` variation which takes in
 
 > First make it run. Then, make it run fast. - Brian Kernighan
 
-A new `OnSharedPreferenceChangeListener` is created everytime to listen for `SharedPreferences` updates. Although it works correctly and fine, it will be improved upon in the next release to be more efficient.
+A new `OnSharedPreferenceChangeListener` is created everytime to listen for `SharedPreferences` updates. Although it works correctly and fine, it will be improved upon in the next release to be more efficient. Wanna Pull Request?
+
+## Created & Maintained By
+
+[Rakshak R.Hegde](https://github.com/rakshakhegde) ([@rakshakhegde](https://twitter.com/rakshakhegde)) Pull requests welcome.
+
+> **Note:** This project is a part of an ongoing series of open-source projects I'm working on. If you liked my work, please consider following me on **[Twitter @rakshakhegde](https://twitter.com/rakshakhegde)** and **[Github](https://github.com/rakshakhegde)**. Also please **share** this project with fellow developers. I'm also starting a newsletter of my own called **[rakshakhegde 📧](https://upscri.be/b00b87/)**. It would be great if you could fill in your email address and subscribe to my new project announcements, releases or blog posts. Subscribe [**here**](https://upscri.be/b00b87/) :)
+
+## My Other Projects used in this one
+
+- [**Diffre**](https://github.com/rakshakhegde/Diffre)
+- [**LastPagerAdapter**](https://github.com/rakshakhegde/LastPagerAdapter)
+
+## License
+
+```txt
+Copyright 2017 Rakshak Hegde
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
