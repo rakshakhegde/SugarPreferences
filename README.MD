@@ -4,7 +4,7 @@
 
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
 
-Interacting with SharedPreferences made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
+Interacting with `SharedPreferences` made simple. Uses Android Databinding. Check out the [sample app code](app/src/main).
 
 ## Setup
 
@@ -39,10 +39,18 @@ ObservableInt progressPref;
 // "PROGRESS" is key name with Int value type
 progressPref = new ObsrvIntPref("PROGRESS"); // uses default SharedPrefs with defaultVal 0 or,
 progressPref = new ObsrvIntPref("PROGRESS", 56); //uses default SharedPrefs with defaultVal 56, or,
-progressPref = new ObsrvIntPref("PROGRESS", 56, yourPreferences);
+progressPref = new ObsrvIntPref("PROGRESS", 56, yourPreferences); // uses your SharedPreferences instance instead of default one
 
 progressPref.get(); // Gets directly from Default SharedPreferences
 progressPref.set(42); // Saves to Default SharedPreferences
+
+// Listen for property updates
+progressPref.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+    	@Override
+    	public void onPropertyChanged(Observable observable, int propertyId) {
+    		doAction(progressPref);
+    	}
+}); // syntax can be simplified using ObservableFlow - another library of mine :)
 ```
 
 `MainActivity.java` - inside onCreate()
@@ -112,3 +120,13 @@ A: To make your developer life simpler, a `ContentProvider` is built into this l
 A: Cuz Kotlin is hip and cool bro... Haha, in all seriousness though, it was much simpler to write in Kotlin and avoid explicitly writing overloaded functions. And the added advantage of nullability checks was a plus for me. Which is why I just went ahead with Kotlin. Extension helper functions are nice too :)
 
 I'm not biased here but you can indeed use this library in a Java-only project and not have much memory or performance impact after Proguard-ing your app.
+
+**Q: I wanna use custom SharedPreferences instead of default one. How to do that?**
+
+A: There's an overloaded version for every `Obsrv*Pref` variation which takes in the `SharedPreferences` you provide. You can use that. If testing, use Mockito, or run Instrumented tests for SharedPreferences. Test away.
+
+## Shortcomings
+
+> First make it run. Then, make it run fast. - Brian Kernighan
+
+A new `OnSharedPreferenceChangeListener` is created everytime to listen for `SharedPreferences` updates. Although it works correctly and fine, it will be improved upon in the next release to be more efficient.
