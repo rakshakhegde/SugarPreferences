@@ -1,5 +1,11 @@
 # SugarPreferences
 
+### Pt 3/3
+
+> Pt 1/3: [**ObservableFlow**](https://github.com/rakshakhegde/ObservableFlow)
+>
+> Pt 2/3: [**stepper-indicator**](https://github.com/rakshakhegde/stepper-indicator)
+
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=598eef525bdade00014f0c3c&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/598eef525bdade00014f0c3c/build/latest?branch=master)
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
 [![Release](https://jitpack.io/v/rakshakhegde/SugarPreferences.svg)](https://jitpack.io/#rakshakhegde/SugarPreferences)
