@@ -8,32 +8,6 @@ Interacting with `SharedPreferences` made simple. Check out the [sample app code
 
 ### Please sign up for my newsletter **[rakshakhegde](https://upscri.be/b00b87/)** 📧
 
-## Setup
-
-Add this in your root `build.gradle` at the end of repositories:
-```gradle
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-Step 2. Add the dependency in your `app` module's `build.gradle` file
-```gradle
-apply plugin: 'kotlin-kapt'  // this line only for Kotlin projects
-
-android {
-    ...
-    dataBinding.enabled true
-}
-
-dependencies {
-    compile 'com.github.rakshakhegde:SugarPreferences:0.1-alpha'
-    kapt 'com.android.databinding:compiler:GRADLE_PLUGIN_VERSION' // this line only for Kotlin projects
-}
-```
-
 ## Usage
 
 ```java
@@ -132,6 +106,32 @@ A: There's an overloaded version for every `Obsrv*Pref` variation which takes in
 > First make it run. Then, make it run fast. - Brian Kernighan
 
 A new `OnSharedPreferenceChangeListener` is created everytime to listen for `SharedPreferences` updates. Although it works correctly and fine, it will be improved upon in the next release to be more efficient. Wanna Pull Request?
+
+## Setup
+
+Add this in your root `build.gradle` at the end of repositories:
+```gradle
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+Step 2. Add the dependency in your `app` module's `build.gradle` file
+```gradle
+apply plugin: 'kotlin-kapt'  // this line only for Kotlin projects
+
+android {
+    ...
+    dataBinding.enabled true
+}
+
+dependencies {
+    compile 'com.github.rakshakhegde:SugarPreferences:0.1-alpha'
+    kapt 'com.android.databinding:compiler:GRADLE_PLUGIN_VERSION' // this line only for Kotlin projects
+}
+```
 
 ## Created & Maintained By
 
