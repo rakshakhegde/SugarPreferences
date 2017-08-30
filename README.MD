@@ -85,7 +85,7 @@ So that's just it. No need to pass `Context`, `apply()`, and what not ceremony..
 
 ### Just like `ObsrvIntPref`, there are others...
 
-    Data Type |    Default Value 
+|    Data Type |    Default Value |
 ----------------|------------------
 `ObsrvBoolPref` | `false`
 `ObsrvFloatPref` | `0F`
