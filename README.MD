@@ -1,7 +1,6 @@
-<img src="ART/demo.gif" width="300" align="right" hspace="20">
-
 # SugarPreferences
 
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=598eef525bdade00014f0c3c&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/598eef525bdade00014f0c3c/build/latest?branch=master)
 ![Minimum API 9](https://img.shields.io/badge/API-9+-blue.svg)
 [![Release](https://jitpack.io/v/rakshakhegde/SugarPreferences.svg)](https://jitpack.io/#rakshakhegde/SugarPreferences)
 
@@ -53,7 +52,7 @@ progressPref.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallba
     	public void onPropertyChanged(Observable observable, int propertyId) {
     		doAction(progressPref);
     	}
-}); // syntax can be simplified using ObservableFlow - another library of mine :)
+}); // syntax can be simplified using ObservableFlow - another library of mine
 ```
 
 `MainActivity.java` - inside onCreate()
